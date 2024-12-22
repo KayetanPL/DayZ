@@ -78,7 +78,8 @@ class CustomMission: MissionServer
 		float rand;
 		player.RemoveAllItems();
 				
-		int throwDice = Math.RandomInt(0, 2);  // WYLOSUJ CZY MA BYĆ US CZY RUS
+		int throwDice = 3; //Math.RandomInt(0, 2);  
+		// WYLOSUJ CZY MA BYĆ US CZY RUS
 		if (throwDice == 0) 	// ZRÓB AMERYKAŃCA
 		{	
 			itemEnt = player.GetInventory().CreateInInventory("PlateCarrierVest");	
@@ -120,6 +121,8 @@ class CustomMission: MissionServer
 				gun1.GetInventory().CreateAttachment("Mag_STANAG_30Rnd");
 				gun1.GetInventory().CreateAttachment("UniversalLight");	
 				gun1.GetInventory().CreateAttachment("M9A1_Bayonet");
+				itemEnt = player.GetInventory().CreateInInventory("Battery9V");				
+				itemEnt = player.GetInventory().CreateInInventory("Battery9V");
 				player.SetQuickBarEntityShortcut(gun1, 0);
 				itemEnt = player.GetInventory().CreateInInventory("Mag_STANAG_30Rnd");
 				itemBs = ItemBase.Cast(itemEnt);
@@ -137,6 +140,7 @@ class CustomMission: MissionServer
 				player.SetQuickBarEntityShortcut(gun2, 0);
 				gun2.GetInventory().CreateAttachment("Mag_Aug_30Rnd");
 				gun2.GetInventory().CreateAttachment("UniversalLight");	
+				itemEnt = player.GetInventory().CreateInInventory("Battery9V");
 				itemEnt = player.GetInventory().CreateInInventory("Mag_Aug_30Rnd");
 				itemBs = ItemBase.Cast(itemEnt);
 				itemEnt = player.GetInventory().CreateInInventory("Mag_Aug_30Rnd");
@@ -196,6 +200,8 @@ class CustomMission: MissionServer
 				gun3.GetInventory().CreateAttachment("AK_Bayonet");	
 				gun3.GetInventory().CreateAttachment("Mag_AK74_30Rnd");
 				gun3.GetInventory().CreateAttachment("UniversalLight");	
+				itemEnt = player.GetInventory().CreateInInventory("Battery9V");
+				itemEnt = player.GetInventory().CreateInInventory("Battery9V");
 				itemEnt = player.GetInventory().CreateInInventory("Mag_AK74_30Rnd");
 				itemBs = ItemBase.Cast(itemEnt);
 				itemEnt = player.GetInventory().CreateInInventory("Mag_AK74_30Rnd");
@@ -216,6 +222,8 @@ class CustomMission: MissionServer
 				gun4.GetInventory().CreateAttachment("AK_Bayonet");	
 				gun4.GetInventory().CreateAttachment("Mag_AKM_30Rnd");
 				gun4.GetInventory().CreateAttachment("UniversalLight");
+				itemEnt = player.GetInventory().CreateInInventory("Battery9V");
+				itemEnt = player.GetInventory().CreateInInventory("Battery9V");
 				itemEnt = player.GetInventory().CreateInInventory("Mag_AKM_30Rnd");
 				itemBs = ItemBase.Cast(itemEnt);
 				itemEnt = player.GetInventory().CreateInInventory("Mag_AKM_30Rnd");
@@ -229,18 +237,50 @@ class CustomMission: MissionServer
 			
 			
 		}
-		if (throwDice == 3) 			// STWÓRZ BANDYTĘ
+		if (throwDice == 2) 			// STWÓRZ BANDYTĘ
 		{
 		// UBIERZ BANDYTĘ
 		
 		itemEnt = player.GetInventory().CreateInInventory("PoliceVest");
-		itemEnt = player.GetInventory().CreateInInventory("PlateCarrierPouches_Green");	
-		itemEnt = player.GetInventory().CreateInInventory("RGD5Grenade");
+		itemEnt = player.GetInventory().CreateInInventory("Balaclava3Holes_Black");	
+		itemEnt = player.GetInventory().CreateInInventory("WorkingBoots_Brown");
+		itemEnt = player.GetInventory().CreateInInventory("TrackSuitJacket_Black");
+		itemEnt = player.GetInventory().CreateInInventory("TrackSuitPants_Black");
+		itemEnt = player.GetInventory().CreateInInventory("WoolGlovesFingerless_Black");
+		itemEnt = player.GetInventory().CreateInInventory("FlatCap_BlackCheck");
+		itemEnt = player.GetInventory().CreateInInventory("Slingbag_Black");
+		itemEnt = player.GetInventory().CreateInInventory("WorkingBoots_Brown");
+		itemEnt = player.GetInventory().CreateInInventory("Flag_Pirates");
+		itemEnt = player.GetInventory().CreateInInventory( "BandageDressing" );
+		player.SetQuickBarEntityShortcut(itemEnt, 2);
+		itemEnt = player.GetInventory().CreateInInventory( "HuntingKnife" );
+		player.SetQuickBarEntityShortcut(itemEnt, 1);
 		
 		
 		}
 		
-		if (throwDice == 3) 			// STWÓRZ WORKERA
+		if (throwDice == 3) 					// STWÓRZ RYCERZA
+		
+		{
+		itemEnt = player.GetInventory().CreateInInventory("MedievalBoots");
+		itemEnt = player.GetInventory().CreateInInventory("Chainmail_Leggings");	
+		itemEnt = player.GetInventory().CreateInInventory("Chainmail");
+		itemEnt = player.GetInventory().CreateInInventory("Chainmail_Coif");
+		itemEnt = player.GetInventory().CreateInInventory("Leather");
+		itemEnt = player.GetInventory().CreateInInventory("Gloves_Natural");
+		itemEnt = player.GetInventory().CreateInInventory("LeatherStorageVest_Natural");
+		itemEnt = player.GetInventory().CreateInInventory("ImprovisedBag");
+		itemEnt = player.GetInventory().CreateInInventory("Sword");
+		itemEnt = player.GetInventory().CreateInInventory("Mace");
+		EntityAI gun5 = player.GetHumanInventory().CreateInHands("Crossbow_Wood");
+		gun5.GetInventory().CreateAttachment("Ammo_HuntingBolt");
+		itemEnt = player.GetInventory().CreateInInventory( "BandageDressing" );
+		player.SetQuickBarEntityShortcut(itemEnt, 2);
+		itemEnt = player.GetInventory().CreateInInventory( "HuntingKnife" );
+		player.SetQuickBarEntityShortcut(itemEnt, 1);
+		}
+		
+		if (throwDice == 99) 			// STWÓRZ WORKERA
 
 		{		
 			itemEnt = player.GetHumanInventory().CreateInHands("Barrel_Green");
